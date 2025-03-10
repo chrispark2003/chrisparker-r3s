@@ -1,17 +1,17 @@
-# Use the official lightweight Node.js image
+# Use alightweight Node.js image
 FROM node:18-alpine
 
-# Set the working directory inside the container
+# Set the working directory for container
 WORKDIR /src/libs
 
-# Copy package.json and package-lock.json first (for better caching)
+# Copy package.json and package-lock.json first
 COPY package*.json ./
 
-# Install dependencies (production mode for smaller images)
+# Install dependencies
 RUN npm install 
 
 # Copy all project files into the container
 COPY . .
 
-# Define the command to start the application
+# Command to start the application
 CMD ["node", "dist/libs/app.js"]
