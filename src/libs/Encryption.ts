@@ -41,7 +41,6 @@ export default function Encryption(secret: string) {
       text += decipher.final('utf8')
 
       // Return decrypted text
-      console.log(text)
       return text
       
     },
